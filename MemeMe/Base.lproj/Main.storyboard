@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,41 +18,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckO-tL-AUw">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCc-ac-typ">
-                                <rect key="frame" x="161.66666666666666" y="79" width="66.666666666666657" height="18.666666666666671"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="161.66666666666666" y="79" width="66.666666666666657" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ccz-hD-J8p"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp">
-                                <rect key="frame" x="146" y="759.33333333333337" width="98" height="18.666666666666629"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="146" y="738" width="98" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q08-J5-nRx"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6Lf-BJ-a5t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BY3-JL-2Gp" secondAttribute="bottom" constant="32" id="GgR-tE-gfT"/>
                             <constraint firstItem="BY3-JL-2Gp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Iev-LP-MSh"/>
-                            <constraint firstItem="CCc-ac-typ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jw1-Mc-Koo"/>
+                            <constraint firstItem="Swh-ct-4V7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MLN-4p-OwC"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wwh-2s-kT2"/>
-                            <constraint firstItem="CCc-ac-typ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="bkT-4z-dd7"/>
+                            <constraint firstItem="Swh-ct-4V7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="ZGt-Xx-3NE"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dcc-He-CIL"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sPZ-8t-lHX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="BY3-JL-2Gp" id="WVT-lu-FL8"/>
+                        <outlet property="topTextField" destination="Swh-ct-4V7" id="Ws5-CI-gUq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-225" y="4"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

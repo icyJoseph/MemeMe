@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var topTextField: MemeUITextField!
+    @IBOutlet var bottomTextField: MemeUITextField!
+
+    let topTextFieldDelegate = MemeUITextFieldDelegate()
+    let bottomTextFieldDelegata = MemeUITextFieldDelegate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        topTextField.delegate = topTextFieldDelegate
+        bottomTextField.delegate = bottomTextFieldDelegata
+
+        topTextField.text = "top"
+        bottomTextField.text = "bottom"
     }
-
-
 }
-
