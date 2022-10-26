@@ -25,12 +25,6 @@ class MemeUITextFieldDelegate: NSObject, UITextFieldDelegate {
         return false
     }
 
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // TODO: Only the first time perhaps?
-        // TODO: Otherwise use the placeholder solution
-        textField.text = ""
-    }
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

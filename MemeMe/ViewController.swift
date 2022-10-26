@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         topTextField.delegate = topTextFieldDelegate
         bottomTextField.delegate = bottomTextFieldDelegata
 
-        topTextField.text = "top"
-        bottomTextField.text = "bottom"
+        topTextField.setPlaceholder(text: "top")
+        bottomTextField.setPlaceholder(text: "bottom")
     }
 }
+
