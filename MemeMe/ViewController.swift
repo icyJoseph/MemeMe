@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet var topTextField: MemeUITextField!
     @IBOutlet var bottomTextField: MemeUITextField!
 
+    @IBOutlet var imagePickerView: UIImageView!
+
     let topTextFieldDelegate = MemeUITextFieldDelegate()
     let bottomTextFieldDelegata = MemeUITextFieldDelegate()
 
@@ -23,5 +25,10 @@ class ViewController: UIViewController {
         topTextField.setPlaceholder(text: "top")
         bottomTextField.setPlaceholder(text: "bottom")
     }
-}
 
+    @IBAction func pickAnImage(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+
+        present(pickerController, animated: true, completion: nil)
+    }
+}
