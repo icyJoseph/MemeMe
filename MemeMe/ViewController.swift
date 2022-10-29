@@ -13,8 +13,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet var imagePickerView: UIImageView!
 
+    @IBOutlet var cameraPickerButton: UIBarButtonItem!
+
     let topTextFieldDelegate = MemeUITextFieldDelegate()
     let bottomTextFieldDelegata = MemeUITextFieldDelegate()
+
+    override func viewWillAppear(_ animated: Bool) {
+        cameraPickerButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +34,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.contentMode = .scaleAspectFit
     }
 
-    @IBAction func pickAnImage(_ sender: Any) {
+    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary // deprecated soon
+        present(pickerController, animated: true, completion: nil)
+    }
+
+    @IBAction func pickAnImageFromCamera(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
     }
 
