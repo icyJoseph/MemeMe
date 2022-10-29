@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var topTextField: MemeUITextField!
     @IBOutlet var bottomTextField: MemeUITextField!
 
@@ -24,11 +24,25 @@ class ViewController: UIViewController {
 
         topTextField.setPlaceholder(text: "top")
         bottomTextField.setPlaceholder(text: "bottom")
+
+        imagePickerView.contentMode = .scaleAspectFit
     }
 
     @IBAction func pickAnImage(_ sender: Any) {
         let pickerController = UIImagePickerController()
-
+        pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imagePickerView.image = image
+        }
+
+        dismiss(animated: true)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 }
