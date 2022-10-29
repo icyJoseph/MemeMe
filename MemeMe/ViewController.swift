@@ -19,7 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let bottomTextFieldDelegata = MemeUITextFieldDelegate()
 
     override func viewWillAppear(_ animated: Bool) {
-        cameraPickerButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        let frontCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.front)
+
+        let rearCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.rear)
+
+        cameraPickerButton.isEnabled = frontCameraAvailable || rearCameraAvailable
     }
 
     override func viewDidLoad() {
