@@ -16,8 +16,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var cameraPickerButton: UIBarButtonItem!
     @IBOutlet var shareButton: UIBarButtonItem!
     
+    @IBOutlet var navigationBar: UINavigationBar!
+    @IBOutlet var toolBar: UIToolbar!
+    
     let topTextFieldDelegate = MemeUITextFieldDelegate()
-    let bottomTextFieldDelegata = MemeUITextFieldDelegate()
+    let bottomTextFieldDelegate = MemeUITextFieldDelegate()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         topTextField.delegate = topTextFieldDelegate
-        bottomTextField.delegate = bottomTextFieldDelegata
+        bottomTextField.delegate = bottomTextFieldDelegate
         
         topTextField.setPlaceholder(text: "top")
         bottomTextField.setPlaceholder(text: "bottom")
@@ -68,10 +71,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = false
         imagePickerView.image = nil
     }
+    
+    @IBAction func saveMeme(_ sender: Any) {
+        navigationBar.isHidden = true
+        toolBar.isHidden = true
+        
+        let memeImage = generateMemeImage(view: view)
+        
+        imagePickerView.image = memeImage
+        shareButton.isEnabled = false
+        
+        navigationBar.isHidden = false
+        toolBar.isHidden = false
+    }
+    
+    // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate protocol methods
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imagePickerView.image = image
+            shareButton.isEnabled = true
         }
         
         dismiss(animated: true)

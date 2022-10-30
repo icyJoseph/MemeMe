@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0D2AD0290EA06400B46833 /* MemeUIShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D2ACF290EA06400B46833 /* MemeUIShare.swift */; };
 		7C76047C2907229F005D7743 /* MemeUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76047B2907229F005D7743 /* MemeUITextFieldDelegate.swift */; };
 		7CD473062906CCD20090A8E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD473052906CCD20090A8E9 /* AppDelegate.swift */; };
 		7CD473082906CCD20090A8E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD473072906CCD20090A8E9 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0D2ACF290EA06400B46833 /* MemeUIShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeUIShare.swift; sourceTree = "<group>"; };
 		7C76047B2907229F005D7743 /* MemeUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeUITextFieldDelegate.swift; sourceTree = "<group>"; };
 		7CD473022906CCD20090A8E9 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD473052906CCD20090A8E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		7C76047A2907227D005D7743 /* MemeUI */ = {
 			isa = PBXGroup;
 			children = (
+				7C0D2ACF290EA06400B46833 /* MemeUIShare.swift */,
 				7CD473192907167D0090A8E9 /* MemeUITextField.swift */,
 				7C76047B2907229F005D7743 /* MemeUITextFieldDelegate.swift */,
 			);
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C76047C2907229F005D7743 /* MemeUITextFieldDelegate.swift in Sources */,
+				7C0D2AD0290EA06400B46833 /* MemeUIShare.swift in Sources */,
 				7CD4730A2906CCD20090A8E9 /* ViewController.swift in Sources */,
 				7CD473062906CCD20090A8E9 /* AppDelegate.swift in Sources */,
 				7CD473082906CCD20090A8E9 /* SceneDelegate.swift in Sources */,
