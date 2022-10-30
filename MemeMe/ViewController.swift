@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = false
         imagePickerView.image = nil
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imagePickerView.image = image
@@ -96,17 +96,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Callbacks to keyboard show/hide
 
     @objc func keyboardWillShow(_ notification: Notification) {
-        if bottomTextField.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+        let keyboardHeight = getKeyboardHeight(notification)
+        
+        if view.frame.origin.y + keyboardHeight != 0, bottomTextField.isEditing {
+            view.frame.origin.y -= keyboardHeight
         }
     }
-    
+
     @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
     }
-    
+
     // MARK: Utils
-    
+
     // This works imilarly to getting a bounding rectangle
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         let userInfo = notification.userInfo
