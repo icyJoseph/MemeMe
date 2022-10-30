@@ -16,10 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckO-tL-AUw">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="91" width="390" height="675"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-0i-fo8">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="gsm-hK-dhd"/>
+                                </items>
+                            </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="161.66666666666666" y="79" width="66.666666666666657" height="40"/>
+                                <rect key="frame" x="161.66666666666666" y="123" width="66.666666666666657" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ccz-hD-J8p"/>
                                 </constraints>
@@ -27,8 +33,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="146" y="694" width="98" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q08-J5-nRx"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leO-gP-97g">
                                 <rect key="frame" x="0.0" y="766" width="390" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="GNo-MC-gIP"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Camera" image="camera" catalog="system" id="ksc-6b-y1N">
                                         <connections>
@@ -43,15 +61,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="146" y="694" width="98" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="q08-J5-nRx"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
@@ -61,11 +70,14 @@
                             <constraint firstItem="Swh-ct-4V7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MLN-4p-OwC"/>
                             <constraint firstItem="leO-gP-97g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nex-d9-5SK"/>
                             <constraint firstItem="leO-gP-97g" firstAttribute="top" secondItem="BY3-JL-2Gp" secondAttribute="bottom" constant="32" id="TDM-To-2El"/>
-                            <constraint firstItem="ckO-tL-AUw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wwh-2s-kT2"/>
-                            <constraint firstItem="Swh-ct-4V7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="ZGt-Xx-3NE"/>
+                            <constraint firstItem="bvC-0i-fo8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bTU-jY-Hd1"/>
+                            <constraint firstItem="Swh-ct-4V7" firstAttribute="top" secondItem="bvC-0i-fo8" secondAttribute="bottom" constant="32" id="c78-6u-dCO"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dcc-He-CIL"/>
-                            <constraint firstItem="leO-gP-97g" firstAttribute="top" secondItem="ckO-tL-AUw" secondAttribute="bottom" constant="-44" id="oQD-Qd-vXO"/>
+                            <constraint firstItem="bvC-0i-fo8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e70-tR-7Hh"/>
+                            <constraint firstItem="leO-gP-97g" firstAttribute="top" secondItem="ckO-tL-AUw" secondAttribute="bottom" symbolic="YES" id="oQD-Qd-vXO"/>
+                            <constraint firstItem="bvC-0i-fo8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qEW-vI-LzA"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sPZ-8t-lHX"/>
+                            <constraint firstItem="ckO-tL-AUw" firstAttribute="top" secondItem="bvC-0i-fo8" secondAttribute="bottom" symbolic="YES" id="uyp-Yf-JRo"/>
                         </constraints>
                     </view>
                     <connections>
