@@ -20,7 +20,11 @@
                                 <items>
                                     <navigationItem id="gsm-hK-dhd">
                                         <barButtonItem key="leftBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="8k8-N6-sXw" userLabel="SHARE BUTTON"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="K7n-pv-iiM"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="K7n-pv-iiM">
+                                            <connections>
+                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="Ew2-op-eBo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -89,6 +93,7 @@
                         <outlet property="bottomTextField" destination="BY3-JL-2Gp" id="WVT-lu-FL8"/>
                         <outlet property="cameraPickerButton" destination="ksc-6b-y1N" id="H77-Jg-DSt"/>
                         <outlet property="imagePickerView" destination="ckO-tL-AUw" id="7tE-Hh-UUg"/>
+                        <outlet property="shareButton" destination="8k8-N6-sXw" id="Mad-jY-t27"/>
                         <outlet property="topTextField" destination="Swh-ct-4V7" id="Ws5-CI-gUq"/>
                     </connections>
                 </viewController>

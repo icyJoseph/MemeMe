@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var imagePickerView: UIImageView!
     
     @IBOutlet var cameraPickerButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
     
     let topTextFieldDelegate = MemeUITextFieldDelegate()
     let bottomTextFieldDelegata = MemeUITextFieldDelegate()
@@ -38,6 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.setPlaceholder(text: "top")
         bottomTextField.setPlaceholder(text: "bottom")
         
+        shareButton.isEnabled = false
         imagePickerView.contentMode = .scaleAspectFit
     }
     
@@ -58,6 +60,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelMeme(_ sender: Any) {
+        topTextField.text = ""
+        bottomTextField.text = ""
+        shareButton.isEnabled = false
+        imagePickerView.image = nil
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
