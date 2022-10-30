@@ -51,6 +51,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    // MARK: Actions
+    
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -72,17 +74,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.image = nil
     }
     
+    // Saves and shares
     @IBAction func saveMeme(_ sender: Any) {
         navigationBar.isHidden = true
         toolBar.isHidden = true
         
         let memeImage = generateMemeImage(view: view)
         
-        imagePickerView.image = memeImage
-        shareButton.isEnabled = false
-        
         navigationBar.isHidden = false
         toolBar.isHidden = false
+        
+        let activityController = UIActivityViewController(activityItems: [memeImage!], applicationActivities: nil)
+        
+        present(activityController, animated: true, completion: nil)
     }
     
     // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate protocol methods

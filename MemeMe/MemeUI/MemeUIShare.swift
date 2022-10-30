@@ -21,6 +21,7 @@ func generateMemeImage(view: UIView) -> UIImage? {
 
     if let memeImage = UIGraphicsGetImageFromCurrentImageContext() {
         UIGraphicsEndImageContext()
+
         return memeImage
     }
 
