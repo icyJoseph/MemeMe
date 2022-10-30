@@ -21,7 +21,10 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-0i-fo8">
                                 <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="gsm-hK-dhd"/>
+                                    <navigationItem id="gsm-hK-dhd">
+                                        <barButtonItem key="leftBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="8k8-N6-sXw" userLabel="SHARE BUTTON"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="K7n-pv-iiM"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
@@ -48,17 +51,19 @@
                                     <constraint firstAttribute="height" constant="49" id="GNo-MC-gIP"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Dqb-wy-BzC"/>
                                     <barButtonItem title="Camera" image="camera" catalog="system" id="ksc-6b-y1N">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="AMa-by-9ag"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jKc-yd-z70"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WK0-Xh-LMG"/>
                                     <barButtonItem title="Photo Album" image="photo" catalog="system" id="nL0-LQ-VHI">
                                         <connections>
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="ISQ-GJ-lsG"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jKc-yd-z70"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -95,5 +100,6 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>
