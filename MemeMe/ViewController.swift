@@ -41,9 +41,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         topTextField.setPlaceholder(text: "top")
         bottomTextField.setPlaceholder(text: "bottom")
+        imagePickerView.contentMode = .scaleAspectFit
         
         shareButton.isEnabled = false
-        imagePickerView.contentMode = .scaleAspectFit
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,8 +74,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.image = nil
     }
     
-    // Saves and shares
-    @IBAction func saveMeme(_ sender: Any) {
+    @IBAction func shareMeme(_ sender: Any) {
         navigationBar.isHidden = true
         toolBar.isHidden = true
         
@@ -83,10 +82,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         navigationBar.isHidden = false
         toolBar.isHidden = false
+       
+        let originalImage = imagePickerView.image
         
-        let activityController = UIActivityViewController(activityItems: [memeImage!], applicationActivities: nil)
+        let topText = topTextField.text
+        let bottomText = bottomTextField.text
         
-        present(activityController, animated: true, completion: nil)
+        if let memeImage, let originalImage, let topText, let bottomText {
+            let meme = Meme(memeImage: memeImage, originalImage: originalImage, topText: topText, bottomText: bottomText)
+            
+            let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+            
+            activityController.completionWithItemsHandler = {
+                (activityType: UIActivity.ActivityType?, completed:
+                    Bool, _: [Any]?, _: Error?) in
+                
+                if let activityType {
+                    switch activityType {
+                    case .saveToCameraRoll:
+                        // no need to save a duplicate
+                        if completed { return }
+                        // saving to camera roll did not complete
+                        // try to save
+                        return saveMeme(meme: meme)
+                    default:
+                        // save photo
+                        return saveMeme(meme: meme)
+                    }
+                }
+            }
+            
+            present(activityController, animated: true, completion: nil)
+        }
     }
     
     // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate protocol methods

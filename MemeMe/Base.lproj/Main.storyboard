@@ -22,7 +22,7 @@
                                     <navigationItem id="gsm-hK-dhd">
                                         <barButtonItem key="leftBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="8k8-N6-sXw" userLabel="SHARE BUTTON">
                                             <connections>
-                                                <action selector="saveMeme:" destination="BYZ-38-t0r" id="v5b-iM-fal"/>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="ByY-al-jdF"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="K7n-pv-iiM">
