@@ -57,7 +57,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jKc-yd-z70"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="161.66666666666666" y="123" width="66.666666666666657" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ccz-hD-J8p"/>
@@ -66,7 +66,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="146" y="689" width="98" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="q08-J5-nRx"/>

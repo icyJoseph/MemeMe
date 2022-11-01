@@ -38,6 +38,7 @@ class MemeUITextField: UITextField {
     
     func setPlaceholder(text: String) {
         self.attributedPlaceholder = NSAttributedString(string: text.uppercased(), attributes: self.textAttributes)
+        self.textAlignment = .center
     }
     
     override var text: String? {
@@ -45,7 +46,6 @@ class MemeUITextField: UITextField {
             return super.text
         }
         set {
-            self.textAlignment = .center
             super.text = newValue?.uppercased()
         }
     }

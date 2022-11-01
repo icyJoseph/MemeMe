@@ -24,12 +24,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let frontCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.front)
-        let rearCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.rear)
-        
-        cameraPickerButton.isEnabled = frontCameraAvailable || rearCameraAvailable
-        
         subscribeToKeyboardNotifications()
     }
     
@@ -44,6 +38,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.contentMode = .scaleAspectFit
         
         shareButton.isEnabled = false
+
+        let frontCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.front)
+        let rearCameraAvailable = UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.rear)
+
+        cameraPickerButton.isEnabled = frontCameraAvailable || rearCameraAvailable
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,7 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         toolBar.isHidden = false
        
         let originalImage = imagePickerView.image
-        
         let topText = topTextField.text
         let bottomText = bottomTextField.text
         
