@@ -12,3 +12,5 @@ Users can input a top text and a bottom text.
 Once an image is selected, users are also able to share the meme through an activity view.
 
 Upon sharing, if the user did not explicitly save the image themselves, then the meme is saved to their photo album.
+
+![Hello World](HelloWorld.jpg)
