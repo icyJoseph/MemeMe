@@ -96,10 +96,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         if completed { return }
                         // saving to camera roll did not complete
                         // try to save
-                        return saveMeme(meme: meme)
+                        return meme.saveMeme()
                     default:
                         // save photo
-                        return saveMeme(meme: meme)
+                        return meme.saveMeme()
                     }
                 }
             }
