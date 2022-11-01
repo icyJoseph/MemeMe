@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var topTextField: MemeUITextField!
     @IBOutlet var bottomTextField: MemeUITextField!
     
@@ -53,17 +53,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Actions
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary // deprecated soon
-        present(pickerController, animated: true, completion: nil)
+        pickImage(source: .photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
+        pickImage(source: .camera)
     }
     
     @IBAction func cancelMeme(_ sender: Any) {
@@ -102,10 +96,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         if completed { return }
                         // saving to camera roll did not complete
                         // try to save
-                        return saveMeme(meme: meme)
+                        return meme.saveMeme()
                     default:
                         // save photo
-                        return saveMeme(meme: meme)
+                        return meme.saveMeme()
                     }
                 }
             }
@@ -162,5 +156,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
+    }
+
+    func pickImage(source: UIImagePickerController.SourceType) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = source
+
+        present(pickerController, animated: true, completion: nil)
     }
 }

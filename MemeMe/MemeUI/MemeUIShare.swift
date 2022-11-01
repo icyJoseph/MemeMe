@@ -14,22 +14,22 @@ struct Meme {
     let originalImage: UIImage
     let topText: String
     let bottomText: String
-}
 
-func saveMeme(meme: Meme) {
-    PHPhotoLibrary.shared().performChanges({
-        PHAssetChangeRequest.creationRequestForAsset(from: meme.memeImage)
-    }, completionHandler: { success, reason in
-        if success {
-            print("Successfully saved image")
-        }
-        else if let reason {
-            print("Failed to save", reason)
-        }
-        else {
-            print("No reason, but saving has failed")
-        }
-    })
+    func saveMeme() {
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: memeImage)
+        }, completionHandler: { success, reason in
+            if success {
+                print("Successfully saved image")
+            }
+            else if let reason {
+                print("Failed to save", reason)
+            }
+            else {
+                print("No reason, but saving has failed")
+            }
+        })
+    }
 }
 
 func generateMemeImage(view: UIView) -> UIImage? {

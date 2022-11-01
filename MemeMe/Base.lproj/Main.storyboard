@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,8 +57,8 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jKc-yd-z70"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="161.66666666666666" y="123" width="66.666666666666657" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Swh-ct-4V7" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="16" y="123" width="358" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ccz-hD-J8p"/>
                                 </constraints>
@@ -66,8 +66,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="146" y="689" width="98" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-JL-2Gp" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="16" y="689" width="358" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="q08-J5-nRx"/>
                                 </constraints>
@@ -79,11 +79,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BY3-JL-2Gp" secondAttribute="trailing" constant="16" id="48B-vt-jTy"/>
+                            <constraint firstItem="Swh-ct-4V7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5DQ-ol-QpI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="leO-gP-97g" secondAttribute="bottom" id="7t4-VZ-ApN"/>
                             <constraint firstItem="leO-gP-97g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Asc-nW-g96"/>
+                            <constraint firstItem="BY3-JL-2Gp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ff9-Tn-quN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ckO-tL-AUw" secondAttribute="trailing" id="GGB-2k-8VF"/>
                             <constraint firstItem="BY3-JL-2Gp" firstAttribute="bottom" secondItem="ckO-tL-AUw" secondAttribute="bottom" constant="-32" id="NfI-d8-REu"/>
                             <constraint firstItem="bvC-0i-fo8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PfR-oC-Yf7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Swh-ct-4V7" secondAttribute="trailing" constant="16" id="RWz-ek-jtA"/>
                             <constraint firstItem="bvC-0i-fo8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zl4-Y5-JYp"/>
                             <constraint firstItem="Swh-ct-4V7" firstAttribute="top" secondItem="ckO-tL-AUw" secondAttribute="top" constant="32" id="bMm-vI-sBI"/>
                             <constraint firstItem="ckO-tL-AUw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="by0-6l-2f0"/>
