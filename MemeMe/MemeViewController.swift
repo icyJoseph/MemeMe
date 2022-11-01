@@ -53,17 +53,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // MARK: Actions
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary // deprecated soon
-        present(pickerController, animated: true, completion: nil)
+        pickImage(source: .photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
+        pickImage(source: .camera)
     }
     
     @IBAction func cancelMeme(_ sender: Any) {
@@ -162,5 +156,13 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
+    }
+
+    func pickImage(source: UIImagePickerController.SourceType) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = source
+
+        present(pickerController, animated: true, completion: nil)
     }
 }
