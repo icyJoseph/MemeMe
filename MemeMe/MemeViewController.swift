@@ -65,6 +65,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.text = ""
         shareButton.isEnabled = false
         imagePickerView.image = nil
+        
+        dismiss(animated: true)
     }
     
     @IBAction func shareMeme(_ sender: Any) {

@@ -21,6 +21,13 @@ struct Meme {
         }, completionHandler: { success, reason in
             if success {
                 print("Successfully saved image")
+
+                // MARK: Save to Global Data
+
+                let object = UIApplication.shared.delegate
+                let appDelegate = object as! AppDelegate
+
+                appDelegate.memes.append(self)
             }
             else if let reason {
                 print("Failed to save", reason)
