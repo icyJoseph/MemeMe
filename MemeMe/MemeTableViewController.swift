@@ -8,11 +8,22 @@
 import Foundation
 import UIKit
 
+class MemeTableViewCell: UITableViewCell {
+    @IBOutlet var memeImageView: UIImageView!
+
+    @IBOutlet var memeLabel: UILabel!
+}
+
 class MemeTableViewController: UITableViewController {
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.separatorStyle = MemeTableViewCell.SeparatorStyle.none
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -25,14 +36,14 @@ class MemeTableViewController: UITableViewController {
         return memes.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MemeTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableViewCell
 
         let meme = memes[indexPath.row]
 
-        cell.textLabel?.text = meme.topText
+        cell.memeLabel?.text = meme.topText + " " + meme.bottomText
 
-        cell.imageView?.image = meme.memeImage
+        cell.memeImageView?.image = meme.memeImage
 
         return cell
     }
