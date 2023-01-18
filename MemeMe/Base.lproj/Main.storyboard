@@ -130,7 +130,62 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g24-ma-dLJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="235"/>
+            <point key="canvasLocation" x="2740" y="257"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="hhf-y1-L8M">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="uRS-GS-0d3" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ohw-bU-ruF">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nh7-f5-mKN">
+                                <rect key="frame" x="0.0" y="87" width="390" height="670"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8O-7H-5ok" userLabel="TOP TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="16" y="123" width="358" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AqB-cz-oEG"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIc-Vq-wJ8" userLabel="BOTTOM TEXT" customClass="MemeUITextField" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="16" y="680" width="358" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="waa-Ay-mlm"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gra-Af-dPE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x8O-7H-5ok" firstAttribute="top" secondItem="Gra-Af-dPE" secondAttribute="top" constant="76" id="3dl-Fv-otc"/>
+                            <constraint firstItem="fIc-Vq-wJ8" firstAttribute="trailing" secondItem="x8O-7H-5ok" secondAttribute="trailing" id="9aN-i6-c5c"/>
+                            <constraint firstItem="fIc-Vq-wJ8" firstAttribute="trailing" secondItem="Ohw-bU-ruF" secondAttribute="trailingMargin" id="FsY-Nl-wuT"/>
+                            <constraint firstItem="nh7-f5-mKN" firstAttribute="top" secondItem="Gra-Af-dPE" secondAttribute="top" constant="40" id="I7Q-ll-Jp5"/>
+                            <constraint firstItem="fIc-Vq-wJ8" firstAttribute="centerX" secondItem="nh7-f5-mKN" secondAttribute="centerX" id="V0N-gi-5yc"/>
+                            <constraint firstItem="nh7-f5-mKN" firstAttribute="leading" secondItem="Gra-Af-dPE" secondAttribute="leading" id="bL7-vU-nX6"/>
+                            <constraint firstItem="nh7-f5-mKN" firstAttribute="centerY" secondItem="Ohw-bU-ruF" secondAttribute="centerY" id="cJz-tW-7ia"/>
+                            <constraint firstItem="fIc-Vq-wJ8" firstAttribute="leading" secondItem="x8O-7H-5ok" secondAttribute="leading" id="ju1-i5-3IK"/>
+                            <constraint firstItem="Gra-Af-dPE" firstAttribute="bottom" secondItem="fIc-Vq-wJ8" secondAttribute="bottom" constant="90" id="uhV-kE-5cz"/>
+                            <constraint firstItem="fIc-Vq-wJ8" firstAttribute="leading" secondItem="Ohw-bU-ruF" secondAttribute="leadingMargin" id="vzG-2g-1B5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomText" destination="fIc-Vq-wJ8" id="X1H-og-Yqf"/>
+                        <outlet property="memeImage" destination="nh7-f5-mKN" id="gwP-p7-JXq"/>
+                        <outlet property="topText" destination="x8O-7H-5ok" id="2wI-zf-j8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wa7-r4-vbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="257"/>
         </scene>
         <!--TableNavigation-->
         <scene sceneID="KSu-vq-kIe">
@@ -152,7 +207,7 @@
         <!--MemeTable-->
         <scene sceneID="j1c-o5-58j">
             <objects>
-                <tableViewController id="7a3-Gh-cMa" userLabel="MemeTable" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Sent Memes" id="7a3-Gh-cMa" userLabel="MemeTable" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ydr-Ws-ELD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +260,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcR-n8-nPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430.7692307692307" y="1002.3696682464455"/>
+            <point key="canvasLocation" x="1431" y="1020"/>
         </scene>
         <!--MemeCollection-->
         <scene sceneID="RYA-FS-z5G">
@@ -241,7 +296,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNs-zk-jJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2740" y="1003"/>
+            <point key="canvasLocation" x="2740" y="1019"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qNo-In-htb">
