@@ -37,7 +37,7 @@ class MemeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MemeTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell") as! MemeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemeTableCell") as! MemeTableViewCell
 
         let meme = memes[indexPath.row]
 
