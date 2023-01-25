@@ -15,18 +15,29 @@ struct Meme {
     let topText: String
     let bottomText: String
 
-    func saveMeme() {
+    func saveMeme(saveToCameraRoll: Bool) {
+        // MARK: Save to Global Data
+
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+
+        appDelegate.memes.append(self)
+
+        if !saveToCameraRoll { return }
+
+        // MARK: Save to device's camera roll
+
         PHPhotoLibrary.shared().performChanges({
             PHAssetChangeRequest.creationRequestForAsset(from: memeImage)
         }, completionHandler: { success, reason in
             if success {
-                print("Successfully saved image")
+                print("Saved image to camera roll")
             }
             else if let reason {
-                print("Failed to save", reason)
+                print("Failed to save to camera roll", reason)
             }
             else {
-                print("No reason, but saving has failed")
+                print("Unexpected error while saving to camera roll")
             }
         })
     }

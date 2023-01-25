@@ -65,6 +65,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         bottomTextField.text = ""
         shareButton.isEnabled = false
         imagePickerView.image = nil
+        
+        dismiss(animated: true)
     }
     
     @IBAction func shareMeme(_ sender: Any) {
@@ -84,24 +86,21 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let meme = Meme(memeImage: memeImage, originalImage: originalImage, topText: topText, bottomText: bottomText)
             
             let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+
+            // probably not needed
+            activityController.isModalInPresentation = true
             
             activityController.completionWithItemsHandler = {
                 (activityType: UIActivity.ActivityType?, completed:
                     Bool, _: [Any]?, _: Error?) in
                 
-                if let activityType {
-                    switch activityType {
-                    case .saveToCameraRoll:
-                        // no need to save a duplicate
-                        if completed { return }
-                        // saving to camera roll did not complete
-                        // try to save
-                        return meme.saveMeme()
-                    default:
-                        // save photo
-                        return meme.saveMeme()
-                    }
-                }
+                let shouldSaveToCameralRoll = activityType != .saveToCameraRoll || !completed
+                // no need to save a duplicate
+                // saving to camera roll did not complete
+                // try to save
+                meme.saveMeme(saveToCameraRoll: shouldSaveToCameralRoll)
+
+                self.dismiss(animated: true)
             }
             
             present(activityController, animated: true, completion: nil)
