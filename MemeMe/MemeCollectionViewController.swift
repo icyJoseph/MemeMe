@@ -24,12 +24,13 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let space: CGFloat = 3.0
-        let dimension = ((view.frame.size.width) - (2 * space)) / 3.0
+        updateCollectionViewFlowLayout(size: view.frame.size)
+    }
 
-        flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        updateCollectionViewFlowLayout(size: size)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,20 @@ class MemeCollectionViewController: UICollectionViewController {
             detailedViewController.meme = memes[indexPath.row]
 
             parent?.navigationController?.pushViewController(detailedViewController, animated: true)
+        }
+    }
+
+    func updateCollectionViewFlowLayout(size: CGSize) {
+        let width = size.width
+        // let height = size.height
+
+        let space: CGFloat = 3.0
+        let dimension = (width - (2 * space)) / 3.0
+
+        if flowLayout != nil {
+            flowLayout.minimumInteritemSpacing = space
+            flowLayout.minimumLineSpacing = space
+            flowLayout.itemSize = CGSize(width: dimension, height: dimension)
         }
     }
 }
