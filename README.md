@@ -1,4 +1,12 @@
-# MemeMe 1.0
+# MemeMe 2.0
+
+Builds upon 1.0, by adding:
+
+- a table list view
+- a collection view
+- and a detailed view for each meme
+
+## MemeMe 1.0
 
 Project made for iOS development Nanodegree.
 
